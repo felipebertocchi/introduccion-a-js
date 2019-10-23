@@ -31,15 +31,11 @@ function calcularSalarioMensual(salarioAnual) {
 
 const $calcularSalarioMensual = document.querySelector("#calcular-salario-mensual")
 
-$calcularSalarioMensual.onclick = function(){
-  console.log("Hiciste click!")
-  let SalarioAnual = document.querySelector("#salario-anual").value;
-  let SalarioMensual = calcularSalarioMensual(SalarioAnual);
-  console.log(SalarioMensual);
-  document.querySelector("#salario-mensual").value = SalarioMensual;
-  return false; //evito que el formulario se envie, asi no recarga la pagina..
+$calcularSalarioMensual.onclick = function () {
+  let salarioAnual = document.querySelector("#salario-anual").value;
+  let salarioMensual = calcularSalarioMensual(salarioAnual);
+  document.querySelector("#salario-mensual").value = salarioMensual;
 }
-
 
 
 //TAREA: En otro archivo html (no Index) y otro archivo js (no tarea-clase-5.js),
