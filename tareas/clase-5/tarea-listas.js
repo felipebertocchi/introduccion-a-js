@@ -61,11 +61,11 @@ function calcularMasGrande(lista) {
 }
 
 function calcularMasFrecuente(lista) {
-    let masFrecuente = "ninguno";
+    let masFrecuente;
     let vecesRepetido = 0;
     let masVecesRepetido = 0;
     for (let i = 0; i < lista.length; i++) {
-        for (let j = i + 1; j < lista.length; j++) {
+        for (let j = i; j < lista.length; j++) {
             if (Number(lista[i].textContent) === Number(lista[j].textContent)) {
                 vecesRepetido++;
             }
@@ -76,7 +76,12 @@ function calcularMasFrecuente(lista) {
         }
         vecesRepetido = 0;
     }
-    return (`${masFrecuente} (se repite ${masVecesRepetido} veces)`);
+    if (masVecesRepetido === 1) {
+        return (`ninguno (ningún valor se repite)`)
+    }
+    else {
+        return (`${masFrecuente} (aparece ${masVecesRepetido} veces)`);
+    }
 }
 
 $calcularPromedio.onclick = function () {
